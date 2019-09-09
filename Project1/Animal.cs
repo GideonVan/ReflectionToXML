@@ -22,7 +22,7 @@ namespace Project1
                     writer.WriteStartDocument();
                     writer.WriteStartElement("Classes");
 
-                    //store classes
+                    //store classes, but not main program class
                     Type[] types = ex.GetTypes();
                     foreach (var t in types)
                     {
@@ -38,7 +38,7 @@ namespace Project1
                             writer.WriteEndElement();
                             writer.WriteStartElement("Class", t.Name);
 
-                            //store methods
+                            //store methods, but not object methods
                             MethodInfo[] methods = t.GetMethods();
                             foreach (var m in methods)
                             {
